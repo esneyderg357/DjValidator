@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>DjValidator-validadores</title>
+		<link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+	</head>
+	<body>
+	
+	<h2>Catálogo de DjValidator</h2>
+		
+	<div class="row">
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Campos de texto</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textarea">Texto (text)</label>
+				  <div class="col-md-8">                     
+				    <textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="passwordinput">Palabra (word)</label>
+				  <div class="col-md-8">
+				    <input name="passwordinput" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" required>
+				  </div>
+				</div>
+		
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético (atext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="atext,3,12" class="form-control input-md" data-dj-validator="atext,3,12" required>  
+				  </div>
+				</div>
+						
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético y dígitos (antext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="antext,3,12" class="form-control input-md" data-dj-validator="antext,3,12" required>
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form2" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Campos numéricos</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Dígitos (dig)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="dig,4,8" class="form-control input-md" data-dj-validator="dig,4,8" required> 
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Enteros (int)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="int,1,100" class="form-control input-md" data-dj-validator="int,1,100" required>
+				  </div>
+				</div>
+				
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Reales (num)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="num,1,10" class="form-control input-md" data-dj-validator="num,1,10" required>  
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate2" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form3" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Validaciones comunes</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Email (email)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="email,*" class="form-control input-md" data-dj-validator="email,*" required> 
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Url (url)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="url,*" class="form-control input-md" data-dj-validator="url,*" required>  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">IP (ip)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="ip" class="form-control input-md" data-dj-validator="ip,v4" required>  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Número telefónico (phone)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="phone" class="form-control input-md" data-dj-validator="phone" required>
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate3" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form4" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Validadores de archivos</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="filebutton">Archivo (file)</label>
+				  <div class="col-md-4">
+				    <input name="filebutton" class="input-file" type="file" multiple data-dj-validator="file,2,4,10,100,image/jpeg|image/png|image/bmp" required>
+				  	<span class="help-block">file,2,4,10,100,image/jpeg|image/png|image/bmp</span>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="filebutton">Extensión de archivo (efile)</label>
+				  <div class="col-md-4">
+				    <input name="filebutton" class="input-file" type="file" data-dj-validator="efile,jpg|jpeg|png|bmp" required>
+				  	<span class="help-block">efile,jpg|jpeg|png|bmp</span>
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate4" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form5" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Campos select multiples</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="selectmultiple">Select Multiple (multi)</label>
+				  <div class="col-md-4">
+				    <select name="selectmultiple" class="form-control" multiple data-dj-validator="multi,2,4" required>
+				      <option value="1">Opción uno</option>
+				      <option value="2">Opción dos</option>
+				      <option value="3">Opción tres</option>
+				      <option value="4">Opción cuatro</option>
+				      <option value="5">Opción cinco</option>
+				      <option value="6">Opción seis</option>
+				    </select>
+				    <span class="help-block">de 2 a 4 opciones</span>
+				  </div>
+				</div>
+				
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate5" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form6" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Campos radio y checkbox</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="radios">Radio requerido</label>
+				  <div class="col-md-4">
+				  <div class="radio">
+				    <label for="radios-0">
+				      <input type="radio" name="radios" id="radios-0" value="1" >
+				      Opción uno
+				    </label>
+					</div>
+				  <div class="radio">
+				    <label for="radios-1">
+				      <input type="radio" name="radios" id="radios-1" value="2" >
+				      Opción dos
+				    </label>
+					</div>
+				  <div class="radio">
+				    <label for="radios-1">
+				      <input type="radio" name="radios" id="radios-1" value="3" data-dj-validator="radio" required>
+				      Opción tres
+				    </label>
+					</div>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="checkboxes">Checkbox</label>
+				  <div class="col-md-4">
+					<div class="checkbox">
+					    <label for="checkboxes">
+					      <input type="checkbox" name="checkbox" value="true" data-dj-validator="check">
+					      Marque esta opción
+					    </label>
+					</div>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="checkboxes">Grupos de checkbox</label>
+				  <div class="col-md-4">
+					<div class="checkbox">
+					    <label for="checkboxes">
+					      <input type="checkbox" name="checkbox" value="true" data-dj-validator-group="group" >
+					      Opción 1
+					    </label>
+					    <label for="checkboxes">
+					      <input type="checkbox" name="checkbox" value="true" data-dj-validator-group="group">
+					      Opción 2
+					    </label>
+					    <label for="checkboxes">
+					      <input type="checkbox" name="checkbox" value="true" data-dj-validator-group="group" data-dj-validator="check,group,1,2,options">
+					      Opción 3
+					    </label>
+					</div>
+				  </div>
+				</div>
+				
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate6" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	</div>
+	
+	<div class="row">
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form7" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Campos relacionados</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Campo igual a</label>  
+				  <div class="col-md-8">
+				  <input id="a" name="textinput" type="text" placeholder="campo igual" class="form-control input-md">  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Campo igual b (equal)</label>  
+				  <div class="col-md-8">
+				  <input  name="textinput" type="text" placeholder="campo igual" class="form-control input-md" data-dj-validator="equal,a,input a" required>  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Campo diferente c</label>  
+				  <div class="col-md-8">
+				  <input id="c" name="textinput" type="text" placeholder="campo diferente" class="form-control input-md">  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Campo diferente d (nequal)</label>  
+				  <div class="col-md-8">
+				  <input  name="textinput" type="text" placeholder="campo diferente" class="form-control input-md" data-dj-validator="nequal,c,input c" required>  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Campo opcional e</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="e o f" class="form-control input-md" data-dj-validator-group="optionals"  >
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Campo opcional f (or)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="e o f" class="form-control input-md" data-dj-validator-group="optionals" data-dj-validator="or,optionals,optional inputs">  
+				  </div>
+				</div>
+				
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate7" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form8" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Validadores personalizados</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Expresiones regulares (regexp)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="regexp,^[aeiou]+$,i" class="form-control input-md" data-dj-validator="regexp,^[aeiou]+$,i" required>
+				  <span class="help-block">vocal only</span>  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Llamar función propia (call)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="call,isUpperCase" class="form-control input-md" data-dj-validator="call,isUpperCase" required>
+				  <span class="help-block">function for validate: isUpperCase</span>  
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Validador agregado (custom)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="even,10" class="form-control input-md" data-dj-validator="even,10" required>
+				  <span class="help-block">DjValidator agregado con la clave: "even,[max]"</span>  
+				  </div>
+				</div>
+				
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate8" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>	
+	
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form9" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Validadores combinados</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético sin espacios</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="atext,3,12&word,3,12" class="form-control input-md" required data-dj-validator="atext,3,12&word,3,12">
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético en mayúsculas</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="atext,3,10&call,isUpperCase" class="form-control input-md" data-dj-validator="atext,3,10&call,isUpperCase">  
+				  </div>
+				</div>
+				
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate9" name="singlebutton" class="btn btn-primary">¡Validar!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	
+		
+	</div>	
+	</body>
+	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/DjValidator.js"></script>
+	<script type="text/javascript" src="../dist/locale/DjValidator-es.js"></script>
+	<script type="text/javascript">
+	
+		$.addDjValidator('even','only even numbers.',function($field,args){
+			value=parseInt($field.val());
+			max=args[1];
+			if(value%2!=1||value>max)return false;
+			return true;
+		});
+		
+		function isUpperCase($field){
+			value=$field.val();
+			if(value==value.toUpperCase())return true;
+			return false;
+		}
+		
+		$(document).ready(function(){
+			$('#validate').click(function(){
+				alert($('#form').djValidator('validate'));
+			});
+			$('#validate2').click(function(){
+				alert($('#form2').djValidator('validate'));
+			});
+			$('#validate3').click(function(){
+				alert($('#form3').djValidator('validate'));
+			});
+			$('#validate4').click(function(){
+				alert($('#form4').djValidator('validate'));
+			});
+			$('#validate5').click(function(){
+				alert($('#form5').djValidator('validate'));
+			});
+			$('#validate6').click(function(){
+				alert($('#form6').djValidator('validate'));
+			});
+			$('#validate7').click(function(){
+				alert($('#form7').djValidator('validate'));
+			});
+			$('#validate8').click(function(){
+				alert($('#form8').djValidator('validate'));
+			});
+			$('#validate9').click(function(){
+				alert($('#form9').djValidator('validate'));
+			});
+		});
+		
+	</script>
+</html>
+

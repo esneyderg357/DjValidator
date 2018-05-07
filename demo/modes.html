@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>DjValidator modes</title>
+		<link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+	</head>
+	<body>
+	
+	<h2>DjValidator modes</h2>
+	
+	<div class="row">
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form1" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Attached to the submit event (default)</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textarea">Text (text)</label>
+				  <div class="col-md-8">                     
+				    <textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="passwordinput">Word (word)</label>
+				  <div class="col-md-8">
+				    <input name="passwordinput" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" required>
+				  </div>
+				</div>
+		
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic text (atext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="atext,3,12" class="form-control input-md" data-dj-validator="atext,3,12" required>  
+				  </div>
+				</div>
+						
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic and numeric text (antext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="antext,3,12" class="form-control input-md" data-dj-validator="antext,3,12" required>
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="submit" id="validate1" name="singlebutton" class="btn btn-primary">Validate!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+		<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form2" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Disable submit event and execute custom function (callback)</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textarea">Text (text)</label>
+				  <div class="col-md-8">                     
+				    <textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="passwordinput">Word (word)</label>
+				  <div class="col-md-8">
+				    <input name="passwordinput" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" required>
+				  </div>
+				</div>
+		
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic text (atext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="atext,3,12" class="form-control input-md" data-dj-validator="atext,3,12" required>  
+				  </div>
+				</div>
+						
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic and numeric text (antext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="antext,3,12" class="form-control input-md" data-dj-validator="antext,3,12" required>
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="submit" id="validate2" name="singlebutton" class="btn btn-primary">Validate!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+		<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form3" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Validation function</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textarea">Text (text)</label>
+				  <div class="col-md-8">                     
+				    <textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="passwordinput">Word (word)</label>
+				  <div class="col-md-8">
+				    <input name="passwordinput" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" required>
+				  </div>
+				</div>
+		
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic text (atext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="atext,3,12" class="form-control input-md" data-dj-validator="atext,3,12" required>  
+				  </div>
+				</div>
+						
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic and numeric text (antext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="antext,3,12" class="form-control input-md" data-dj-validator="antext,3,12" required>
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate3" name="singlebutton" class="btn btn-primary">Validate!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	</div>
+
+	<div class="row">
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form4" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Validation of a single field</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-3 control-label" for="textarea">Text (text)</label>
+				  <div class="col-md-5">                     
+				    <textarea class="form-control" id="field1" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea>
+				  </div>
+				  <div class="col-md-4">
+				    <button type="button" id="validate4" name="singlebutton" class="btn btn-primary">Validate!</button>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-3 control-label" for="passwordinput">Word (word)</label>
+				  <div class="col-md-5">
+				    <input name="passwordinput" id="field2" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" required>
+				  </div>
+				  <div class="col-md-4">
+				    <button type="button" id="validate5" name="singlebutton" class="btn btn-primary">Validate!</button>
+				  </div>
+				</div>
+			
+				</fieldset>
+			</form>
+		</div>
+	</div>
+	</div>
+	
+	
+	</body>
+	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/DjValidator.js"></script>
+	<script type="text/javascript">
+		
+		$(document).ready(function(){
+			
+			$('#form1').djValidator();
+			
+			$('#form2').djValidator('callback',function($form){
+				alert("Callback executed when the form is valid.");
+			});
+			
+			$('#validate3').click(function(){
+				alert("only validate form: "+$('#form3').djValidator('validate'));
+			});
+			
+			$('#validate4').click(function(){
+				alert("only validate Text field: "+$('#field1').djValidator('field'));
+			});
+			
+			$('#validate5').click(function(){
+				alert("only validate Word field: "+$('#field2').djValidator('field'));
+			});
+			
+		});
+	</script>
+</html>
+

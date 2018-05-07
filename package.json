@@ -1,0 +1,26 @@
+{
+  "name": "djvalidator",
+  "version": "1.0.0",
+  "description": "DjValidator is a jquery plugin for the validation of forms, in a simple, fast and flexible way regardless of the web design framework",
+  "main": "./dist/DjValidator.js",
+  "keywords": [
+    "jquery-plugin",
+    "ecosystem:jquery",
+    "form",
+    "validation",
+    "bootstrap"
+  ],
+  "author": {
+    "name": "David Esneyder Jerez Garnica",
+    "email": "esneyderg357@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esneyderg357/DjValidator.git"
+  },
+  "license": "GPL v3",
+  "homepage": "http://djvalidator.blogspot.com/",
+  "dependencies": {
+    "jquery": ">=1.8"
+  }
+}

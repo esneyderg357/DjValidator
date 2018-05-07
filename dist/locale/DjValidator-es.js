@@ -1,0 +1,50 @@
+/*
+ *DjValidator v1.0.0 translation by David Esneyder Jerez Garnica (esneyderg357@gmail.com)
+ *2017 
+ */
+(function ($){
+	$.setDjValidatorLabels({
+		required:'Campo requerido.',
+		word_min:'Por lo menos $1 caracteres sin espacios.',
+		word_between:'Entre $1 y $2 caracteres sin espacios.',
+		atext_min:'Por lo menos $1 caracteres alfabéticos.',
+		atext_between:'Entre $1 y $2 caracteres alfabéticos.',
+		antext_min:'Por lo menos $1 caracteres alfabéticos o digitos.',
+		antext_between:'Entre $1 y $2 caracteres alfabéticos o digitos.',
+		text_min:'Por lo menos $1 caracteres.',
+		text_between:'Entre $1 y $2 caracteres.',
+		int_invalid:'Número entero no válido.',
+		int_min:'El número debe ser mayor o igual a $1.',
+		int_max:'El número debe ser menor o igual a $1.',
+		int_between:'El número debe estar entre $1 y $2.',
+		num_invalid:'Número real no válido.',
+		num_min:'El número debe ser mayor o igual a $1.',
+		num_max:'El número debe ser menor o igual a $1.',
+		num_between:'El número debe estar entre $1 y $2.',
+		dig_min:'Por lo menos $1 digitos.',
+		dig_between:'Entre $1 y $2 digitos.',
+		file_min:'Seleccione al menos $1 archivos.',
+		file_between:'Debe seleccionar entre $1 y $2 archivos.',
+		file_format:'Formato de archivo no válido.',
+		file_min_size:'Los archivos deben tener un tamaño mayor a $1 kb.',
+		file_max_size:'Los archivos deben tener un tamaño menor a $1 kb.',
+		file_ext:'Extensiones de archivo válidas: $1',
+		email:'Email no válido',
+		email_max:'El email debe tener menos de $1 caracteres',
+		phone:'Teléfono no válido',
+		url:'Url no válida',
+		url_max:'La url debe tener menos de $1 caracteres',
+		ip:'Dirección $1 no válida',
+		regexp:'Valor no válido',
+		or:'$1: Al menos uno de estos campos es requerido.',
+		equal:'Debe coincidir con: $1.',
+		not_equal:'Debe ser deiferente de: $1.',
+		multi_min:'Debe seleccionar al menos $1 opciones.',
+		multi_between:'Debe seleccionar de $1 a $2 opciones.',
+		call:'Valor no válido',
+		radio:'Marque una opción',
+		check_single:'Marque esta casilla.',
+		check_multi_min:'$1: marque al menos $2 casillas.',
+		check_multi_between:'$1: marque de $2 a $3 casillas.'
+	});
+}(jQuery));

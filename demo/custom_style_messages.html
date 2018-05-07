@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>DjValidator customs</title>
+		<link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+	</head>
+	<body>
+	
+	<div class="row">
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Custom styles and messages</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textarea">Name</label>
+				  <div class="col-md-8">                     
+				    <textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" data-dj-validator-msg="Name is not valid!" required></textarea>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="passwordinput">Word (word)</label>
+				  <div class="col-md-8">
+				    <input name="passwordinput" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" data-dj-validator-msg="Passwrod invalid!" required>
+				  </div>
+				</div>
+		
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic text (atext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="placeholder" class="form-control input-md" data-dj-validator="atext,3,12" data-dj-validator-msg="Only between 3 and 12 letters." required>  
+				  </div>
+				</div>
+						
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Alphabetic and numeric text (antext)</label>  
+				  <div class="col-md-8">
+				  <input name="textinput" type="text" placeholder="antext,3,12" class="form-control input-md" data-dj-validator="antext,3,12" data-dj-validator-msg="Only between 3 and 12 letters or digits." required>
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate" name="singlebutton" class="btn btn-primary">Validate!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	</div>
+	
+	
+	</body>
+	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="../dist/DjValidator.js"></script>
+	<script type="text/javascript">
+	
+		$.setDjValidatorStyle('display:none; text-align:center; color:white; background-color:red;');
+		
+		$(document).ready(function(){
+			$('#validate').click(function(){
+				alert($('#form').djValidator('validate'));
+			});
+		});
+	</script>
+</html>
+

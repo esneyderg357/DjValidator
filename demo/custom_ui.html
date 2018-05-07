@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>dj-validator custom UI</title>
+		<link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+		<link rel="stylesheet" href="assets/chosen/chosen.css">
+	</head>
+	<body>
+	
+	<div class="row">
+	<div class="panel panel-default col-md-4">
+		<div class="panel-body">
+			<form id="form1" class="form-horizontal">
+				<fieldset>
+				
+				<legend>Custom UI</legend>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="selectmultiple">Chosen(select from 2 to 4 options)</label>
+				  <div class="col-md-8">
+				    <select id="selectmultiple" name="selectmultiple" class="form-control" multiple data-dj-validator="multi,2,4" required>
+				      <option value="1">Option one</option>
+				      <option value="2">Option two</option>
+				      <option value="3">Option tree</option>
+				      <option value="4">Option four</option>
+				      <option value="5">Option five</option>
+				      <option value="6">Option six</option>
+				    </select>
+				  </div>
+				</div>
+		
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">bootstrap input group</label>  
+				  <div class="col-md-8">
+				  	<div class="input-group">
+				      <span class="input-group-addon">
+				        <input type="checkbox" data-dj-validator="check">
+				      </span>
+				      <input type="text" class="form-control" data-dj-validator="text,2,10" required>
+				    </div>
+				  </div>
+				</div>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Users</label>  
+				  <div class="col-md-8">
+				  	<select id="select" name="select" class="form-control">
+				      <option value="">select user</option>
+				      <option value="1">a</option>
+				      <option value="2">b</option>
+				      <option value="3">c</option>
+				    </select>
+				  </div>
+				</div>
+				<hr>
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="textinput">Hidden input</label>  
+				  <div class="col-md-8">
+				  	<input name="userid" id="userid" type="hidden" class="form-control input-md" required data-dj-validator-msg="Select a user">  
+				  </div>
+				</div>
+			
+				</fieldset>
+				
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="singlebutton"></label>
+				  <div class="col-md-8">
+				    <button type="button" id="validate1" name="singlebutton" class="btn btn-primary">Validate!</button>
+				  </div>
+				</div>
+			
+			</form>
+		</div>
+	</div>
+	</div>
+	
+		
+	<div>
+		<h3>Form whit table (no bootstrap)</h3>
+		<form id="form2">
+			<table border="2">
+				<tr>
+					<td>Text (text)</td>
+					<td><textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea></td>
+				</tr>
+				<tr>
+					<td>Alphabetic text (atext)</td>
+					<td><input name="textinput" type="text" placeholder="atext,3,12" class="form-control input-md" data-dj-validator="atext,3,12" required></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="button" id="validate2" name="singlebutton">Validate!</button></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+	
+	
+	</body>
+	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/chosen/chosen.jquery.js"></script>
+	<script type="text/javascript" src="../dist/DjValidator.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			
+			$('#select').change(function(){
+				$('#userid').val($(this).val());
+			});
+			
+			$('#selectmultiple').chosen({width:'100%'});
+			
+			$('#validate1').click(function(){
+				alert($('#form1').djValidator('validate'));
+			});
+			
+			$('#validate2').click(function(){
+				alert($('#form2').djValidator('validate'));
+			});
+			
+		});
+	</script>
+</html>
+
