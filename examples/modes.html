@@ -8,7 +8,7 @@
 	<body>
 	
 	<h2>DjValidator modes</h2>
-	
+	<button type="button" id="reset" name="singlebutton" class="btn btn-success">Clear mode: clear validation messages.</button>
 	<div class="row">
 	<div class="panel panel-default col-md-4">
 		<div class="panel-body">
@@ -194,6 +194,10 @@
 	<script type="text/javascript">
 		
 		$(document).ready(function(){
+			
+			$('#reset').click(function(){
+				$('form').djValidator('clear');
+			});
 			
 			$('#form1').djValidator();
 			

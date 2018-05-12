@@ -31,11 +31,11 @@
 				</div>
 		
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">bootstrap input group</label>  
+				  <label class="col-md-4 control-label" for="textinput">bootstrap input groups</label>  
 				  <div class="col-md-8">
 				  	<div class="input-group">
 				      <span class="input-group-addon">
-				        <input type="checkbox" data-dj-validator="check">
+				        <input type="checkbox">
 				      </span>
 				      <input type="text" class="form-control" data-dj-validator="text,2,10" required>
 				    </div>
@@ -73,20 +73,22 @@
 			</form>
 		</div>
 	</div>
-	</div>
-	
 		
-	<div>
+	<div class="col-md-4">
 		<h3>Form whit table (no bootstrap)</h3>
 		<form id="form2">
 			<table border="2">
 				<tr>
 					<td>Text (text)</td>
-					<td><textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea></td>
+					<td><textarea name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea></td>
 				</tr>
 				<tr>
 					<td>Alphabetic text (atext)</td>
-					<td><input name="textinput" type="text" placeholder="atext,3,12" class="form-control input-md" data-dj-validator="atext,3,12" required></td>
+					<td><input name="textinput" type="text" placeholder="atext,3,12" data-dj-validator="atext,3,12" required /></td>
+				</tr>
+				<tr>
+					<td>Group (data-input-group)</td>
+					<td><input name="username" type="text" placeholder="username" required data-input-group="as" /><button type="button">button</button></td>
 				</tr>
 				<tr>
 					<td colspan="2"><button type="button" id="validate2" name="singlebutton">Validate!</button></td>
@@ -95,6 +97,7 @@
 		</form>
 	</div>
 	
+	</div>
 	
 	</body>
 	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>

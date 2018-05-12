@@ -1,6 +1,6 @@
 {
   "name": "djvalidator",
-  "description": "DjValidator is a jquery plugin for the validation of forms, in a simple, fast and flexible way regardless of the web design framework",
+  "description": "DjValidator is the jquery plugin for validating web forms, simpler, faster to use and flexible, it does not depend on any UI framework.",
   "main": "./dist/DjValidator.js",
   "keywords": [
     "jquery-plugin",
@@ -19,13 +19,13 @@
   "license": "GPL-3.0",
   "homepage": "http://djvalidator.blogspot.com/",
   "ignore": [
-    "demo",
+    "examples",
     "lib",
     "package.json",
     "*.md",
     "*.txt"
   ],
   "dependencies": {
-    "jquery": ">=1.8"
+    "jquery": ">=1.5.1"
   }
 }

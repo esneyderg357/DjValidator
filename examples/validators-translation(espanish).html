@@ -2,44 +2,44 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<title>DjValidator-validators</title>
+		<title>DjValidator-validadores</title>
 		<link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
 	</head>
 	<body>
 	
-	<h2>DjValidator catalog</h2>
-	
+	<h2>Catálogo de DjValidator</h2>
+	<button type="button" id="clear" name="singlebutton" class="btn btn-success">Borrar los mensajes de validación.</button>
 	<div class="row">
 	<div class="panel panel-default col-md-4">
 		<div class="panel-body">
 			<form id="form" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Text inputs</legend>
+				<legend>Campos de texto</legend>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textarea">Text (text)</label>
+				  <label class="col-md-4 control-label" for="textarea">Texto (text)</label>
 				  <div class="col-md-8">                     
 				    <textarea class="form-control" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea>
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="passwordinput">Word (word)</label>
+				  <label class="col-md-4 control-label" for="passwordinput">Palabra (word)</label>
 				  <div class="col-md-8">
 				    <input name="passwordinput" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" required>
 				  </div>
 				</div>
 		
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Alphabetic text (atext)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético (atext)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="atext,3,12" class="form-control input-md" data-dj-validator="atext,3,12" required>  
 				  </div>
 				</div>
 						
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Alphabetic and numeric text (antext)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético y dígitos (antext)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="antext,3,12" class="form-control input-md" data-dj-validator="antext,3,12" required>
 				  </div>
@@ -50,7 +50,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -63,17 +63,17 @@
 			<form id="form2" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Numeric inputs</legend>
+				<legend>Campos numéricos</legend>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Digits (dig)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Dígitos (dig)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="dig,4,8" class="form-control input-md" data-dj-validator="dig,4,8" required> 
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Integer (int)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Enteros (int)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="int,1,100" class="form-control input-md" data-dj-validator="int,1,100" required>
 				  </div>
@@ -81,7 +81,7 @@
 				
 				<!-- Text input-->
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Real (num)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Reales (num)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="num,1,10" class="form-control input-md" data-dj-validator="num,1,10" required>  
 				  </div>
@@ -92,7 +92,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate2" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate2" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -105,7 +105,7 @@
 			<form id="form3" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Common validators</legend>
+				<legend>Validaciones comunes</legend>
 				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textinput">Email (email)</label>  
@@ -129,7 +129,7 @@
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Phone number (phone)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Número telefónico (phone)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="phone" class="form-control input-md" data-dj-validator="phone" required>
 				  </div>
@@ -140,7 +140,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate3" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate3" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -155,10 +155,10 @@
 			<form id="form4" class="form-horizontal">
 				<fieldset>
 				
-				<legend>file validators</legend>
+				<legend>Validadores de archivos</legend>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="filebutton">File (file)</label>
+				  <label class="col-md-4 control-label" for="filebutton">Archivo (file)</label>
 				  <div class="col-md-4">
 				    <input name="filebutton" class="input-file" type="file" multiple data-dj-validator="file,2,4,10,100,image/jpeg|image/png|image/bmp" required>
 				  	<span class="help-block">file,2,4,10,100,image/jpeg|image/png|image/bmp</span>
@@ -166,7 +166,7 @@
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="filebutton">File extension (efile)</label>
+				  <label class="col-md-4 control-label" for="filebutton">Extensión de archivo (efile)</label>
 				  <div class="col-md-4">
 				    <input name="filebutton" class="input-file" type="file" data-dj-validator="efile,jpg|jpeg|png|bmp" required>
 				  	<span class="help-block">efile,jpg|jpeg|png|bmp</span>
@@ -178,7 +178,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate4" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate4" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -191,20 +191,20 @@
 			<form id="form5" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Select field</legend>
+				<legend>Campos select multiples</legend>
 				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="selectmultiple">Select Multiple (multi)</label>
 				  <div class="col-md-4">
 				    <select name="selectmultiple" class="form-control" multiple data-dj-validator="multi,2,4" required>
-				      <option value="1">Option one</option>
-				      <option value="2">Option two</option>
-				      <option value="3">Option tree</option>
-				      <option value="4">Option four</option>
-				      <option value="5">Option five</option>
-				      <option value="6">Option six</option>
+				      <option value="1">Opción uno</option>
+				      <option value="2">Opción dos</option>
+				      <option value="3">Opción tres</option>
+				      <option value="4">Opción cuatro</option>
+				      <option value="5">Opción cinco</option>
+				      <option value="6">Opción seis</option>
 				    </select>
-				    <span class="help-block">from 2 to 4 options</span>
+				    <span class="help-block">de 2 a 4 opciones</span>
 				  </div>
 				</div>
 				
@@ -213,7 +213,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate5" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate5" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -225,27 +225,27 @@
 			<form id="form6" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Radios and checkboxes</legend>
+				<legend>Campos radio y checkbox</legend>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="radios">Radio required</label>
+				  <label class="col-md-4 control-label" for="radios">Radio requerido</label>
 				  <div class="col-md-4">
 				  <div class="radio">
 				    <label for="radios-0">
 				      <input type="radio" name="radios" id="radios-0" value="1" >
-				      Option one
+				      Opción uno
 				    </label>
 					</div>
 				  <div class="radio">
 				    <label for="radios-1">
 				      <input type="radio" name="radios" id="radios-1" value="2" >
-				      Option two
+				      Opción dos
 				    </label>
 					</div>
 				  <div class="radio">
 				    <label for="radios-1">
 				      <input type="radio" name="radios" id="radios-1" value="3" data-dj-validator="radio" required>
-				      Option tree
+				      Opción tres
 				    </label>
 					</div>
 				  </div>
@@ -257,27 +257,27 @@
 					<div class="checkbox">
 					    <label for="checkboxes">
 					      <input type="checkbox" name="checkbox" value="true" data-dj-validator="check">
-					      Check this
+					      Marque esta opción
 					    </label>
 					</div>
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="checkboxes">Checkbox group</label>
+				  <label class="col-md-4 control-label" for="checkboxes">Grupos de checkbox</label>
 				  <div class="col-md-4">
 					<div class="checkbox">
 					    <label for="checkboxes">
 					      <input type="checkbox" name="checkbox" value="true" data-dj-validator-group="group" >
-					      option 1
+					      Opción 1
 					    </label>
 					    <label for="checkboxes">
 					      <input type="checkbox" name="checkbox" value="true" data-dj-validator-group="group">
-					      option 2
+					      Opción 2
 					    </label>
 					    <label for="checkboxes">
 					      <input type="checkbox" name="checkbox" value="true" data-dj-validator-group="group" data-dj-validator="check,group,1,2,options">
-					      option 3
+					      Opción 3
 					    </label>
 					</div>
 				  </div>
@@ -288,7 +288,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate6" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate6" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -303,47 +303,47 @@
 			<form id="form7" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Related fields</legend>
+				<legend>Campos relacionados</legend>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Equal input a</label>  
+				  <label class="col-md-4 control-label" for="textinput">Campo igual a</label>  
 				  <div class="col-md-8">
-				  <input id="a" name="textinput" type="text" placeholder="equal input" class="form-control input-md">  
+				  <input id="a" name="textinput" type="text" placeholder="campo igual" class="form-control input-md">  
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Equal input b (equal)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Campo igual b (equal)</label>  
 				  <div class="col-md-8">
-				  <input  name="textinput" type="text" placeholder="equal input" class="form-control input-md" data-dj-validator="equal,a,input a" required>  
+				  <input  name="textinput" type="text" placeholder="campo igual" class="form-control input-md" data-dj-validator="equal,a,input a" required>  
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Not equal input c</label>  
+				  <label class="col-md-4 control-label" for="textinput">Campo diferente c</label>  
 				  <div class="col-md-8">
-				  <input id="c" name="textinput" type="text" placeholder="not equal input" class="form-control input-md">  
+				  <input id="c" name="textinput" type="text" placeholder="campo diferente" class="form-control input-md">  
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Not equal input d (nequal)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Campo diferente d (nequal)</label>  
 				  <div class="col-md-8">
-				  <input  name="textinput" type="text" placeholder="not equal input" class="form-control input-md" data-dj-validator="nequal,c,input c" required>  
+				  <input  name="textinput" type="text" placeholder="campo diferente" class="form-control input-md" data-dj-validator="nequal,c,input c" required>  
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">optional input e</label>  
+				  <label class="col-md-4 control-label" for="textinput">Campo opcional e</label>  
 				  <div class="col-md-8">
-				  <input name="textinput" type="text" placeholder="e or f" class="form-control input-md" data-dj-validator-group="optionals"  >
+				  <input name="textinput" type="text" placeholder="e o f" class="form-control input-md" data-dj-validator-group="optionals"  >
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">optional input f (or)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Campo opcional f (or)</label>  
 				  <div class="col-md-8">
-				  <input name="textinput" type="text" placeholder="e or f" class="form-control input-md" data-dj-validator-group="optionals" data-dj-validator="or,optionals,optional inputs">  
+				  <input name="textinput" type="text" placeholder="e o f" class="form-control input-md" data-dj-validator-group="optionals" data-dj-validator="or,optionals,optional inputs">  
 				  </div>
 				</div>
 				
@@ -352,7 +352,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate7" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate7" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -365,10 +365,10 @@
 			<form id="form8" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Custom validations</legend>
+				<legend>Validadores personalizados</legend>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Regular expression (regexp)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Expresiones regulares (regexp)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="regexp,^[aeiou]+$,i" class="form-control input-md" data-dj-validator="regexp,^[aeiou]+$,i" required>
 				  <span class="help-block">vocal only</span>  
@@ -376,7 +376,7 @@
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Custom function (call)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Llamar función propia (call)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="call,isUpperCase" class="form-control input-md" data-dj-validator="call,isUpperCase" required>
 				  <span class="help-block">function for validate: isUpperCase</span>  
@@ -384,10 +384,10 @@
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">New dj-validator added (custom)</label>  
+				  <label class="col-md-4 control-label" for="textinput">Validador agregado (custom)</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="even,10" class="form-control input-md" data-dj-validator="even,10" required>
-				  <span class="help-block">dj-validator added with key: "even,[max]"</span>  
+				  <span class="help-block">DjValidator agregado con la clave: "even,[max]"</span>  
 				  </div>
 				</div>
 				
@@ -396,7 +396,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate8" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate8" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -409,17 +409,17 @@
 			<form id="form9" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Combined validators</legend>
+				<legend>Validadores combinados</legend>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Alphabetic text without spaces</label>  
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético sin espacios</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="atext,3,12&word,3,12" class="form-control input-md" required data-dj-validator="atext,3,12&word,3,12">
 				  </div>
 				</div>
 				
 				<div class="form-group">
-				  <label class="col-md-4 control-label" for="textinput">Upper case alphabetical text</label>  
+				  <label class="col-md-4 control-label" for="textinput">Texto alfabético en mayúsculas</label>  
 				  <div class="col-md-8">
 				  <input name="textinput" type="text" placeholder="atext,3,10&call,isUpperCase" class="form-control input-md" data-dj-validator="atext,3,10&call,isUpperCase">  
 				  </div>
@@ -430,7 +430,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="button" id="validate9" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate9" name="singlebutton" class="btn btn-primary">¡Validar!</button>
 				  </div>
 				</div>
 			
@@ -443,6 +443,7 @@
 	</body>
 	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="../dist/DjValidator.js"></script>
+	<script type="text/javascript" src="../dist/locale/DjValidator-es.js"></script>
 	<script type="text/javascript">
 	
 		$.addDjValidator('even','only even numbers.',function($field,args){
@@ -485,6 +486,9 @@
 			});
 			$('#validate9').click(function(){
 				alert($('#form9').djValidator('validate'));
+			});
+			$('#clear').click(function(){
+				$('form').djValidator('clear');
 			});
 		});
 		

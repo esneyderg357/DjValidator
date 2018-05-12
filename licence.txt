@@ -1,6 +1,6 @@
-DjValidator v1.0.0
+DjValidator v1.1.0
 
-Copyright (C) 2017 David Esneyder Jerez Garnica
+Copyright (C) 2018 David Esneyder Jerez Garnica
 Contact: esneyderg357@gmail.com
 
 This program is free software: you can redistribute it and/or modify

@@ -1,8 +1,8 @@
 ﻿/*
- *DjValidator v1.0.0 is a jquery plugin for the validation of web forms, 
+ *DjValidator v1.1.0 is a jquery plugin for the validation of web forms, 
  *in a simple, fast and flexible way regardless of the web design framework.
  *
- * Copyright (C) 2017 David Esneyder Jerez Garnica
+ * Copyright (C) 2018 David Esneyder Jerez Garnica
  * Contact: esneyderg357@gmail.com
  *
  * This program is free software: you can redistribute it and/or modify
@@ -18,9 +18,11 @@
  * See the GNU General Public license <http://www.gnu.org/licenses/gpl-3.0.html>.
  */
 
-if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.8 or higher.');}
+if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.5.1 or higher.');}
 
 (function ($){
+	
+	//variables:
 	var djv_keys=['word','atext','antext','text','int','num','dig','file','efile','email','phone','url','regexp','equal','nequal','or','multi','call','radio','check','ip'];	
 	var djv_functions=[vword,vatext,vantext,vtext,vint,vnum,vdig,vfile,vefile,vmail,vphone,vurl,vregexp,vequal,vnequal,vor,vmulti,vcall,vradio,vcheck,vip];
 	var djv_style="display:none; color:red; text-align:inherit; font:.9em fantasy bold italic;";
@@ -69,8 +71,9 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 			check_multi_between:'$1: Check from $2 to $3 options.'
 	}
 	
+	//funciones de validación:
 	function vreq($obj){
-		if($obj.data('dj-validator-group'))return true;
+		if($.data($obj,'dj-validator-group'))return true;
 		var value=$obj.val();
 		if(value==null||value==""||/^\s+$/.test(value))return false;
 		return true;
@@ -125,8 +128,7 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 	function vint($obj,params){
 		if(params.length<3)throw new Error("Error validating field '"+$obj.attr("name")+"'"+", insufficient parameters.");
 		var value=$obj.val();
-		var rint=/^[+-]?\d+$/;
-		if(!rint.test(value)){createMsg($obj,djv_labels.int_invalid);return false;}
+		if(!/^[+-]?\d+$/.test(value)){createMsg($obj,djv_labels.int_invalid);return false;}
 		if(params[1]=="*"){
 			if(params[2]=="*")return true;
 			else if(parseInt(value)>params[2]){createMsg($obj,djv_labels.int_max.replace('$1',params[2]));return false;} 
@@ -237,6 +239,7 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 	
 	function vregexp($obj,params){
 		if(params.length<2)throw new Error("Error validating field '"+$obj.attr("name")+"'"+", insufficient parameters.");
+		params[1]=params[1].replace('°',',');
 		var ext=params[2]?new RegExp(params[1],params[2]):new RegExp(params[1]);
 		if(!ext.test($obj.val())){createMsg($obj,djv_labels.regexp);return false;}
 		return true;
@@ -246,7 +249,8 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 		if(params.length<3)throw new Error("Error validating field '"+$obj.attr("name")+"'"+", insufficient parameters.");
 		fs=$('input[data-dj-validator-group='+params[1]+']');
 		var valid=false;
-		for(i=0;i<fs.length;i++){
+		var len=fs.length;
+		for(i=0;i<len;i++){
 			value=$(fs[i]).val();
 			if(value!=null&&value!=""&&!/^\s+$/.test(value))valid=true;
 		}
@@ -329,27 +333,36 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 		return true;
 	}
 	
+	//core functions:
+	
 	function createMsg($obj,text){
-		var custom=$obj.data('dj-validator-msg');
+		var custom=$.data($obj,'dj-validator-msg');
 		if(custom)text=custom;
 		$new=$('<p class="dj-validator-msg" style="'+djv_style+'">'+text+'</p>');
 		var type=$obj.attr('type');
 		var disp=$obj.is(':visible');
-		if((type&&(type=='radio'||type=='checkbox'))||!disp)$new.appendTo($obj.parent());
+		var group=$.data($obj,'input-group');
+		if((type&&(type=='radio'||type=='checkbox'))||!disp||group)$new.appendTo($obj.parent());
 		else $new.insertAfter($obj);
 		$new.fadeIn(1500);
+	}
+	
+	function clean($form){
+		$form.find(".dj-validator-msg").remove();
 	}
 	
 	function validateField($field){
 		var correct=true;
 		if(vreq($field)){
-			var def=$field.data('dj-validator');
+			var def=$.data($field,'dj-validator');
 			if(def){
 				var validators=def.split("&");
 				for (j=0;j<validators.length;j++) {
 					var params=validators[j].split(",");
 					var n=djv_keys.indexOf(params[0]);
-					if(n!=-1)correct=djv_functions[n]($field,params)?correct:false;
+					if(n!=-1){
+						correct=djv_functions[n]($field,params)?correct:false;
+					}
 					else throw new Error("'"+params[0]+"' is not a valid DjValidator key.");
 				}
 			}
@@ -360,50 +373,58 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 	
 	function validateForm($form){
 		var valid=true;
-		$form.find(".dj-validator-msg").remove();
+		clean($form);
 		$form.find(':input').each(function(id,el){
 			valid=validateField($(el))?valid:false;
 		});
 		return valid;
 	}
 	
-    $.fn.djValidator=function(mode,callback) {
-    	if(mode){
-    		if(mode=='validate'){
-    			if(this.length>1)throw new Error("The 'validate' option requires the selection of a single form, there are "+this.length+" selected.");
-    	    	var $form=$(this);
-    	    	return validateForm($form);
-    		}
-    		else if(mode=='callback'){
-    			return this.filter('form').each(function(){
-    	    		var $form=$(this);
-    	    		$form.attr('novalidate','novalidate');
-    	    		$form.find(':input').eq(0).focus();
-    	    		$form.submit(function(){
-    	    			if(validateForm($form)==true){
-    	    				if(callback){callback($form);}
-    	    				else throw new Error("The 'callback' option requires a function as a parameter.");
-    	    			}
-    	    			return false;
-    	    		});
-    	    	});
-    		}
-    		else if(mode=='field'){
-    			$(this).parent().find(".dj-validator-msg").remove();
-    			return validateField($(this));
-    		}
-    		else console.warn("Invalid option for DjValidator.");
-    	}
-    	return this.filter('form').each(function(){
-    		var $form=$(this);
-    		$form.attr('novalidate','novalidate');
-    		$form.find(':input').eq(0).focus();
-    		$form.submit(function(){
-    			return validateForm($form);
-    		});
-    	});
-    };
+	//plugin definition:
 	
+	$.fn.djValidator=function(mode,callback) {
+		if(mode){
+			switch(mode){
+				case 'validate':
+					if(this.length>1)throw new Error("The 'validate' option requires the selection of a single form, there are "+this.length+" selected.");
+	    	    	var $form=$(this);
+	    	    	return validateForm($form);
+				case 'callback':
+					return this.filter('form').each(function(){
+	    	    		var $form=$(this);
+	    	    		$form.attr('novalidate','novalidate');
+	    	    		$form.submit(function(){
+	    	    			if(validateForm($form)==true){
+	    	    				if(callback){callback($form);}
+	    	    				else throw new Error("The 'callback' mode requires a function as second parameter.");
+	    	    			}
+	    	    			return false;
+	    	    		});
+	    	    	});
+				case 'clean':
+					return this.filter('form').each(function(){
+	    				clean($(this));
+	    			});
+				case 'field':
+					$(this).parent().find(".dj-validator-msg").remove();
+	    			return validateField($(this));
+				default:
+					throw new Error("Invalid mode for DjValidator.");
+			}
+		}
+		else {
+			return this.filter('form').each(function(){
+	    		var $form=$(this);
+	    		$form.attr('novalidate','novalidate');
+	    		$form.submit(function(){
+	    			return validateForm($form);
+	    		});
+	    	});
+		}
+	}
+	
+	//global functions:
+    
 	$.addDjValidator=function(key,msg,callback){
 		djv_keys.push(key);
 		djv_functions.push(function($obj,params){
