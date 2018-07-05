@@ -13,6 +13,9 @@ Initial release
 * Fixed a bug in the 'regex' rule when the regular expression contained commas ','.
 * Code optimizations.
 
+## Version 1.1.1
+
+* Critical correction, v1.1.0 is wrong!
 
 ## Author
 

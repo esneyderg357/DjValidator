@@ -1,5 +1,5 @@
 ﻿/*
- *DjValidator v1.1.0 is a jquery plugin for the validation of web forms, 
+ *DjValidator v1.1.1 is a jquery plugin for the validation of web forms, 
  *in a simple, fast and flexible way regardless of the web design framework.
  *
  * Copyright (C) 2018 David Esneyder Jerez Garnica
@@ -73,7 +73,7 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 	
 	//funciones de validación:
 	function vreq($obj){
-		if($.data($obj,'dj-validator-group'))return true;
+		if($obj.data('dj-validator-group'))return true;
 		var value=$obj.val();
 		if(value==null||value==""||/^\s+$/.test(value))return false;
 		return true;
@@ -336,12 +336,12 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 	//core functions:
 	
 	function createMsg($obj,text){
-		var custom=$.data($obj,'dj-validator-msg');
+		var custom=$obj.data('dj-validator-msg');
 		if(custom)text=custom;
 		$new=$('<p class="dj-validator-msg" style="'+djv_style+'">'+text+'</p>');
 		var type=$obj.attr('type');
 		var disp=$obj.is(':visible');
-		var group=$.data($obj,'input-group');
+		var group=$obj.data('input-group');
 		if((type&&(type=='radio'||type=='checkbox'))||!disp||group)$new.appendTo($obj.parent());
 		else $new.insertAfter($obj);
 		$new.fadeIn(1500);
@@ -354,7 +354,7 @@ if (typeof jQuery==='undefined'){throw new Error('DjValidator requires jQuery 1.
 	function validateField($field){
 		var correct=true;
 		if(vreq($field)){
-			var def=$.data($field,'dj-validator');
+			var def=$field.data('dj-validator');
 			if(def){
 				var validators=def.split("&");
 				for (j=0;j<validators.length;j++) {

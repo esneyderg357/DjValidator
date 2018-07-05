@@ -1,4 +1,4 @@
-DjValidator v1.1.0
+DjValidator v1.1.1
 
 Copyright (C) 2018 David Esneyder Jerez Garnica
 Contact: esneyderg357@gmail.com

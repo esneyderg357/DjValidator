@@ -8,7 +8,7 @@
 	<body>
 	
 	<h2>DjValidator catalog</h2>
-	<button type="button" id="clear" name="singlebutton" class="btn btn-success">Clear form validation messages.</button>
+	<button type="button" id="clean" name="singlebutton" class="btn btn-success">Clear form validation messages.</button>
 	<div class="row">
 	<div class="panel panel-default col-md-4">
 		<div class="panel-body">
@@ -486,8 +486,8 @@
 			$('#validate9').click(function(){
 				alert($('#form9').djValidator('validate'));
 			});
-			$('#clear').click(function(){
-				$('form').djValidator('clear');
+			$('#clean').click(function(){
+				$('form').djValidator('clean');
 			});
 		});
 		
