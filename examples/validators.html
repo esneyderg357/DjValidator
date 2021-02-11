@@ -8,7 +8,7 @@
 	<body>
 	
 	<h2>DjValidator catalog</h2>
-	<button type="button" id="clean" name="singlebutton" class="btn btn-success">Clear form validation messages.</button>
+	<button type="button" id="clean" name="singlebutton" class="btn btn-success">Clean form validation messages.</button>
 	<div class="row">
 	<div class="panel panel-default col-md-4">
 		<div class="panel-body">
@@ -124,7 +124,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textinput">IP (ip)</label>  
 				  <div class="col-md-8">
-				  <input name="textinput" type="text" placeholder="ip" class="form-control input-md" data-dj-validator="ip,v4" required>  
+				  <input name="textinput" type="text" placeholder="ip,v4" class="form-control input-md" data-dj-validator="ip,v4" required>  
 				  </div>
 				</div>
 				
@@ -437,21 +437,22 @@
 			</form>
 		</div>
 	</div>
+</div>		
 	
-		
-	</div>	
-	</body>
+</body>
 	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="../dist/DjValidator.js"></script>
 	<script type="text/javascript">
-	
-		$.addDjValidator('even','only even numbers.',function($field,args){
+
+		//creating new validator:
+		$.fn.djValidator.add('even','only even numbers.',function($field,args){
 			value=parseInt($field.val());
 			max=args[1];
 			if(value%2!=1||value>max)return false;
 			return true;
 		});
 		
+		//creating validation function:
 		function isUpperCase($field){
 			value=$field.val();
 			if(value==value.toUpperCase())return true;
@@ -459,35 +460,58 @@
 		}
 		
 		$(document).ready(function(){
+			//habilitar modo blur:
+			$('form').djValidator({mode:'blur'});
+			//cambiar modo de validación a function de forma global
+			$.fn.djValidator.props.mode='function';
+			
 			$('#validate').click(function(){
-				alert($('#form').djValidator('validate'));
+				result=$('#form').djValidator();
+				alert(result);
 			});
+
 			$('#validate2').click(function(){
-				alert($('#form2').djValidator('validate'));
+				result=$('#form2').djValidator();
+				alert(result);
 			});
+
 			$('#validate3').click(function(){
-				alert($('#form3').djValidator('validate'));
+				result=$('#form3').djValidator();
+				alert(result);
 			});
+
 			$('#validate4').click(function(){
-				alert($('#form4').djValidator('validate'));
+				result=$('#form4').djValidator();
+				alert(result);
 			});
+			
 			$('#validate5').click(function(){
-				alert($('#form5').djValidator('validate'));
+				result=$('#form5').djValidator();
+				alert(result);
 			});
+
 			$('#validate6').click(function(){
-				alert($('#form6').djValidator('validate'));
+				result=$('#form6').djValidator();
+				alert(result);
 			});
+
 			$('#validate7').click(function(){
-				alert($('#form7').djValidator('validate'));
+				result=$('#form7').djValidator();
+				alert(result);
 			});
+
 			$('#validate8').click(function(){
-				alert($('#form8').djValidator('validate'));
+				result=$('#form8').djValidator();
+				alert(result);
 			});
+
 			$('#validate9').click(function(){
-				alert($('#form9').djValidator('validate'));
+				result=$('#form9').djValidator();
+				alert(result);
 			});
+
 			$('#clean').click(function(){
-				$('form').djValidator('clean');
+				$('form').djValidator({mode:'clean'});
 			});
 		});
 		

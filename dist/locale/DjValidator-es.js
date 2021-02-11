@@ -1,9 +1,9 @@
 /*
- *DjValidator v1.0.0 translation by David Esneyder Jerez Garnica (esneyderg357@gmail.com)
- *2017 
+ *DjValidator v2.0.0 translation by David Esneyder Jerez Garnica (esneyderg357@gmail.com)
+ *2021 
  */
 (function ($){
-	$.setDjValidatorLabels({
+	$.fn.djValidator.setLabels({
 		required:'Campo requerido.',
 		word_min:'Por lo menos $1 caracteres sin espacios.',
 		word_between:'Entre $1 y $2 caracteres sin espacios.',
@@ -45,6 +45,9 @@
 		radio:'Marque una opción',
 		check_single:'Marque esta casilla.',
 		check_multi_min:'$1: marque al menos $2 casillas.',
-		check_multi_between:'$1: marque de $2 a $3 casillas.'
+		check_multi_between:'$1: marque de $2 a $3 casillas.',
+		ajax:'Valor rechazado.',
+		ajax_validating:'Validando, espere por favor...',
+		ajax_fail:'Error, no se pudo validar el campo.'
 	});
 }(jQuery));

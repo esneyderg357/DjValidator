@@ -17,7 +17,7 @@
     "url": "https://github.com/esneyderg357/DjValidator.git"
   },
   "license": "GPL-3.0",
-  "homepage": "http://djvalidator.blogspot.com/",
+  "homepage": "https://esneyderg357.github.io/DjValidator-docs",
   "ignore": [
     "examples",
     "lib",

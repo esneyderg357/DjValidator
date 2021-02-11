@@ -1,10 +1,10 @@
 /*
- *DjValidator v1.0.0 translation by Sergey Tolkachyov https://web-tolk.ru (info@web-tolk.ru)
- *2020
+ *DjValidator v2.0.0 translation by Sergey Tolkachyov https://web-tolk.ru (info@web-tolk.ru)
+ *2021
  */
  
 jQuery(document).ready(function(){
-    jQuery.setDjValidatorLabels({
+	$.fn.djValidator.setLabels({
         required:'Обязательное поле.',
         word_min:'Минимум $1 символов без пробелов.',
         word_between:'От $1 до $2 символов без пробелов.',
@@ -46,6 +46,9 @@ jQuery(document).ready(function(){
         radio:'Выберите значение.',
         check_single:'Отметьте значение.',
         check_multi_min:'$1: Выберите минимум $2 значений.',
-        check_multi_between:'$1: Выберите от $2 до $3 значений.'
+        check_multi_between:'$1: Выберите от $2 до $3 значений.',
+		ajax:'Отклоненное значение.',
+		ajax_validating:'Поле проверяется, подождите...',
+		ajax_fail:'Ошибка, не удалось проверить.'
     });
 });

@@ -106,6 +106,8 @@
 	<script type="text/javascript">
 		$(document).ready(function(){
 			
+			$('form').djValidator({mode:'blur'});
+			
 			$('#select').change(function(){
 				$('#userid').val($(this).val());
 			});
@@ -113,11 +115,11 @@
 			$('#selectmultiple').chosen({width:'100%'});
 			
 			$('#validate1').click(function(){
-				alert($('#form1').djValidator('validate'));
+				alert($('#form1').djValidator({mode:'function'}));
 			});
 			
 			$('#validate2').click(function(){
-				alert($('#form2').djValidator('validate'));
+				alert($('#form2').djValidator({mode:'function'}));
 			});
 			
 		});

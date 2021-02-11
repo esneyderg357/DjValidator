@@ -8,14 +8,14 @@
 	<body>
 	
 	<h2>DjValidator modes</h2>
-	<button type="button" id="reset" name="singlebutton" class="btn btn-success">Clear mode: clear validation messages.</button>
+	<button type="button" id="reset" name="singlebutton" class="btn btn-success">Mode 'clean': clean validation messages.</button>
 	<div class="row">
 	<div class="panel panel-default col-md-4">
 		<div class="panel-body">
-			<form id="form1" class="form-horizontal">
+			<form id="form1" class="form-horizontal" novalidate="novalidate">
 				<fieldset>
 				
-				<legend>Attached to the submit event (default)</legend>
+				<legend>Mode 'submit':Attached to the submit event (default)</legend>
 				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textarea">Text (text)</label>
@@ -57,12 +57,13 @@
 			</form>
 		</div>
 	</div>
-		<div class="panel panel-default col-md-4">
+		
+	<div class="panel panel-default col-md-4">
 		<div class="panel-body">
 			<form id="form2" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Disable submit event and execute custom function (callback)</legend>
+				<legend>Mode 'function': validation returns a boolean</legend>
 				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textarea">Text (text)</label>
@@ -97,19 +98,20 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="singlebutton"></label>
 				  <div class="col-md-8">
-				    <button type="submit" id="validate2" name="singlebutton" class="btn btn-primary">Validate!</button>
+				    <button type="button" id="validate2" name="singlebutton" class="btn btn-primary">Validate!</button>
 				  </div>
 				</div>
 			
 			</form>
 		</div>
 	</div>
-		<div class="panel panel-default col-md-4">
+	
+	<div class="panel panel-default col-md-4">
 		<div class="panel-body">
 			<form id="form3" class="form-horizontal">
 				<fieldset>
 				
-				<legend>Validation function</legend>
+				<legend>Mode 'blur': Manually activation for blur validation(each input)</legend>
 				
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textarea">Text (text)</label>
@@ -152,71 +154,30 @@
 		</div>
 	</div>
 	</div>
-
-	<div class="row">
-	<div class="panel panel-default col-md-4">
-		<div class="panel-body">
-			<form id="form4" class="form-horizontal">
-				<fieldset>
-				
-				<legend>Validation of a single field</legend>
-				
-				<div class="form-group">
-				  <label class="col-md-3 control-label" for="textarea">Text (text)</label>
-				  <div class="col-md-5">                     
-				    <textarea class="form-control" id="field1" name="textarea" placeholder="text,3,12" data-dj-validator="text,3,12" required></textarea>
-				  </div>
-				  <div class="col-md-4">
-				    <button type="button" id="validate4" name="singlebutton" class="btn btn-primary">Validate!</button>
-				  </div>
-				</div>
-				
-				<div class="form-group">
-				  <label class="col-md-3 control-label" for="passwordinput">Word (word)</label>
-				  <div class="col-md-5">
-				    <input name="passwordinput" id="field2" type="password" placeholder="word,4,8" class="form-control input-md" data-dj-validator="word,4,8" required>
-				  </div>
-				  <div class="col-md-4">
-				    <button type="button" id="validate5" name="singlebutton" class="btn btn-primary">Validate!</button>
-				  </div>
-				</div>
-			
-				</fieldset>
-			</form>
-		</div>
-	</div>
-	</div>
-	
-	
-	</body>
+</body>
 	<script type="text/javascript" src="../lib/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="../dist/DjValidator.js"></script>
 	<script type="text/javascript">
 		
 		$(document).ready(function(){
-			
+			//clean mode:
 			$('#reset').click(function(){
-				$('form').djValidator('clear');
+				$('form').djValidator({mode:'clean'});
 			});
 			
-			$('#form1').djValidator();
+			//submit mode:
+			$('#form1').djValidator({mode:'submit'});
 			
-			$('#form2').djValidator('callback',function($form){
-				alert("Callback executed when the form is valid.");
+			//function mode:
+			$('#validate2').click(function(){
+				alert("only validate form: "+$('#form2').djValidator({mode:'function'}));
 			});
-			
+		
+			//blur mode:
+			$('#form3').djValidator({mode:'blur'});
 			$('#validate3').click(function(){
-				alert("only validate form: "+$('#form3').djValidator('validate'));
-			});
-			
-			$('#validate4').click(function(){
-				alert("only validate Text field: "+$('#field1').djValidator('field'));
-			});
-			
-			$('#validate5').click(function(){
-				alert("only validate Word field: "+$('#field2').djValidator('field'));
-			});
-			
+				alert("only validate form: "+$('#form3').djValidator({mode:'function'}));
+			});			
 		});
 	</script>
 </html>
